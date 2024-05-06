@@ -1,7 +1,7 @@
 const buildOptions = (data) => {
-    const options = {}
+    const options = {};
 
-    if (data){
+    if (data) {
         options.body = JSON.stringify(data)
         options.headers = {
             'content-type': 'application/json'
@@ -11,12 +11,12 @@ const buildOptions = (data) => {
 }
 
 
-const request = async (method, url, data) =>{
+const request = async (method, url, data) => {
     const response = await fetch(url, {
         ...buildOptions(data),
         method,
     })
-    
+
     const result = await response.json()
 
     return result
